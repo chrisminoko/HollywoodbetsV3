@@ -1,0 +1,83 @@
+<div class="container-title">
+  <div class="row">
+   
+    <div class="col-md-12">
+  
+      <div class="pull-right">
+    
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Full Mathch
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background: #1e1e1e; border-radius:0px !important;">
+            <div *ngFor="let bettype of bettypes">
+
+              <a style="color: white;" class="dropdown-item">{{bettype.bettype}}</a>
+
+            </div>
+            
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container mt-2 container-groupby">
+
+  <div class="row">
+    <div class="col-md-12 mt-3">
+      <div *ngFor="let fix of Fixtures">
+        <table class="table table-nonfluid" style="min-width: 100%;">
+          <tr class="fluid">
+            <div  class="heading"
+              style="background-color: #333333; ">
+              <td class="col-sm-6"
+              style="color: #fff; padding-right: 12px;">
+                {{fix.Time}}
+                <img class="flag-image" src="{{fix.CountryURL}}"
+                  style="width: 15px;height: 15px;">
+                {{fix.LeaguName}}
+              </td>
+            </div>
+          </tr>
+          <tr  class="fluid">
+            <div class="btn-group btn-block" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-secondary"   >
+                <span class="name">
+                  {{fix.HomeTeam}}
+                </span>
+                <span class="price">
+                  {{fix.HomePrice}}
+                </span>
+              
+              </button>
+              <button type="button" class="btn btn-secondary btn-group .draw" >
+                <span class="name">
+                  {{fix.Draw}}
+                </span>
+                <span class="price">
+                  {{fix.DrawPrice}}
+                </span>
+              
+              </button>
+              <button type="button" class="btn btn-secondary" >
+                <span class="name">
+                  {{fix.Away_Team}}
+                </span>
+                <span class="price">
+                  {{fix.DrawPrice}}
+                </span>
+              </button>
+            </div>
+          
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

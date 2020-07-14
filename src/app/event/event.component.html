@@ -1,0 +1,92 @@
+<div class="contianer container-title">
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="pull-right">
+        <div class="dropdown dropleft">
+
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            BET TYPES
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+            style="background: #1e1e1e; border-radius:0px !important;">
+            <div *ngFor="let bettype of bettypes">
+
+              <a style="color: white;" class="dropdown-item" (click)="selectBetType(bettype)">{{bettype.bettype}}</a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="contianer">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="card mt-1 text-white" style="min-width: 100% !important; background-color:  #643e94 !important;">
+        <div class="row justify-content-between">
+
+
+          <div class="col-md-12">
+            <table *ngFor="let evnts of eventMarkets" class="table text-white">
+              <thead class="thead" style="background-color: #1e1e1e!important;">
+                <tr>
+                  <th scope="row">
+                    <h6>{{evnts.event.eventDate | date : "EEEE,MMMM,dd,yyyy"}}</h6>
+                  </th>
+                  <th></th>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: #333333!important;">
+                  <th scope="row">{{evnts.event.eventDate | date:'HH:mm:ss'}}</th>
+                  <td>{{evnts.event.eventName }}</td>
+                  <td>
+                    <div class="col-md-12 btn-group" role="group" aria-label="Basic example"
+                      style="min-width:100%!important ;flex-wrap: wrap !important;">
+                      <div *ngFor="let market of evnts.marketOdd">
+
+                        <div *ngIf="(market.tournamentBetypeID===currentlyselectedBetTypes.betypeid)" class="media"
+                          style="min-width: 100%!important;">
+
+
+
+                          <div class="btn-group gradient-buttons" style="border-radius: 0px;" role="group"
+                            aria-label="Basic example" style="min-width: 100%;margin-left: -20px !important;">
+
+                            <button (click)="addEventToBetSlip(evnts.event,market.markeType,market.odds)"type="button" class="btn btn-secondary draw">
+                              <span class="name">
+                                {{market.markeType}}
+                              </span>
+                              <span class="price">
+                                {{market.odds}}
+                              </span>
+                            </button>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

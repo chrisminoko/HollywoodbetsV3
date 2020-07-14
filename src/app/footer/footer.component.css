@@ -1,0 +1,78 @@
+.topfooter{
+    background-color:#1e1e1e !important;
+    border-bottom: 2px solid #643e94;
+    border-top: 2px solid #643e94;
+}
+*{
+    font-family: sans-serif;
+    font-size: small;
+}
+.middlefooter{
+    background-color: white !important;
+}
+.bootomfooter{
+    background-color:#1e1e1e !important;  
+}
+.imagestack{
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.paragraph{
+    color: white;
+    font-weight: bold;
+}
+.paragraph1{
+    color: white;
+    font-weight: lighter;
+}
+h1{
+    color: white;
+    font-weight: bold;
+    padding-top: 2em; padding-bottom: 1em;
+}
+.underline{
+ color: white;
+}
+
+.footeroption{
+    font-size: small;
+    color: white;
+    display: block;
+    padding-bottom: 5px;
+}
+
+.footerheadings{
+    padding-bottom: 10px;
+    font-size: small;
+    text-align: center;
+    border-bottom: 1px solid #643e94!important;
+}
+
+.footericon{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background: #643e94;
+    
+}
+
+.level1text{
+    border-right: 1px solid #474747!important;
+    padding:1px;
+    padding-right: 10px;
+    margin-left: 10px;
+    font-size: smaller;
+}
+
+.footerimage{
+    max-width: 90px;
+    padding: 10px;
+}
+.payments{
+    background-color: white ;
+}

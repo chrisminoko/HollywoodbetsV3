@@ -1,0 +1,27 @@
+<!-- <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Tournament</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Tournament of tournament">
+
+      <td>
+        <a routerLink="/event/{{Tournament.tournamentId}}">
+          <p>{{Tournament.name}}</p>
+        </a>
+
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+
+<div class="row" >
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3" *ngFor="let Tournament of tournament">
+    <div class="card" >
+      <a   routerLink="/event/{{Tournament.tournamentId}}" style= "width: 40 px !important; color: #1e1e1e!important;" class="btn btn-block btn-sm btn-secondary">{{Tournament.name}}</a>
+    </div>
+  </div>
+</div>

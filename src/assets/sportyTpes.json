@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1,
+        "name": "Betgames Africa",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/soccer.svg"
+     
+    },
+    {
+        "id": 2,
+        "name": "Live In-Play",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/live-in-play.svg"
+     
+    },
+    {
+        "id": 3,
+        "name": "Sport Exotics",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/sport-exotics.svg"
+     
+    },
+    {
+        "id": 4,
+        "name": "Horse Racing",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/horse-racing.svg"
+     
+    },
+    {
+        "id": 5,
+        "name": "Soccer",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/soccer.svg"
+     
+    },
+    {
+        "id": 6,
+        "name": "Lucky Numbers",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/lucky-numbers.svg"
+     
+    },
+    {
+        "id": 7,
+        "name": "In-Running",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/tennis.svg"
+     
+    },
+    {
+        "id": 8,
+        "name": "Tennis",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/tennis.svg"
+     
+    },
+    {
+        "id": 9,
+        "name": "Rugby",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/rugby.svg"
+     
+    },
+    {
+        "id": 10,
+        "name": "Cricket",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/cricket.svg"
+     
+    },
+    {
+        "id": 11,
+        "name": "Golf",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/golf.svg"
+     
+    },
+    {
+        "id": 12,
+        "name": "America Football",
+        "imageUrl": "https://new.hollywoodbets.net/assets/images/icons/american-football.svg"
+     
+    }
+
+]

@@ -1,0 +1,232 @@
+<div class="row ">
+    <div class="col-12-fluid mr-2">
+        <div class="card text-white "
+            style="border-color: transparent; background-color: #1e1e1e;  min-width: 100 !important;">
+            <div class="card-header" style="background-color: #643e94;border-radius: 0px; min-width: 100 !important;">
+                <div class="row">
+                    <div class="col-7">
+                        Bet Slip ({{count}})
+                    </div>
+                    <div class="col-5">
+                        <ng-template [ngIf]="count>1">
+
+                            <button (click)="clearBetslip()"
+                                style="background-color: transparent; color: #d9534f; border: none; font-size: 17px; margin-right: auto;">
+                                Clear <i class="fa fa-times"></i>
+                            </button>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+
+
+            <ng-template [ngIf]="count==0">
+                <div class="container" style="justify-content: center !important; padding-top: 10px !important;">
+                    <p class="card-text"
+                        style="border-color: transparent; background-color: #1e1e1e;  min-width: 100 !important;">
+                        <strong>To place a bet: </strong> Choose the sport, tournament and event that you would like to
+                        bet on. Then select a market by clicking the odds that you would like to bet on</p>
+                </div>
+            </ng-template>
+
+            <div class="card-body"
+                style="min-width: 100% !important; max-height: 300px !important; overflow-y: auto !important;">
+                <div class="media " *ngFor="let i of iterm" style="min-width: 100% !important; ">
+                    <div class="media-body" style="margin-top: -25px; margin-bottom: 20px;">
+                        <div class="row mt-2">
+                            <div class="col-9 mt-2 ">
+                                <p style="font-size: 14px; margin-left: -7px;">
+                                    {{i.id}}. {{i.event.betType}} {{i.punterBetChoice}}
+                                </p>
+                            </div>
+                            <div class="col-3 mt-2">
+                                <button (click)="removeFromBetSlip(i.event)"
+                                    style="background-color: transparent; color: #d9534f; border: none; font-size: 17px;">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mt-2">
+                                <p style="font-size: small;">
+                                    {{i.event.sportName}} {{i.selectionOdds}} <br>
+                                    {{i.event.tournamentName}} <br>
+                                    {{i.event.EeventName}} <br>
+                                    {{i.event.EeventDate |  date : "EEEE,MMMM,dd,yyyy"}}
+                                </p>
+
+
+                                <p class="justify-content-center" style="color: rgb(95, 95, 55);"><strong>{{i.message}}</strong>
+                                </p>
+
+                            </div>
+                            <div class="col-2 mt-2">
+                                <!-- {{i.selectionOdds}} -->
+                            </div>
+                        </div>
+
+
+                    
+                        <div class="row"
+                            style="align-content: center!important;justify-content: center!important;display: flex!important; margin-top:white !important; border-bottom:solid 2px white !important ;">
+                            <div class="col-6">
+
+                                <label style="font-size:small;">
+                                    Stake : R <input   style="background-color: #2b2b2b; color: aliceblue;  border: none !important; border-radius: 0% !important;" appcurrencyformatter="" #box
+                                        (Keyup)="onKeyStake(box.value,i.selectionOdds,i.id)"
+                                        (click)="onKeyStake(box.value,i.selectionOdds,i.id)" value="{{i.stake}}"
+                                        class="form-control stake-input-box input-sm ng-pristine ng-valid ng-touched spinner"
+                                        min="1" type="number">
+                                </label>
+                            </div>
+
+                            <div class="col-6">
+                                <label style="font-size:small;">
+                                    Payout : R
+                                    <input   style="background-color: #2b2b2b; color: aliceblue;  border: none !important; border-radius: 0% !important;" appcurrencyformatter="" #payout
+                                        (Keyup)="onKeyPayout(payout.value,i.selectionOdds,i.id)"
+                                        (click)="onKeyPayout(payout.value,i.selectionOdds,i.id)" value="{{i.payout}}"
+                                        class="form-control stake-input-box input-sm ng-pristine ng-valid ng-touched spinner"
+                                        min="1" type="number">
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <ng-template [ngIf]="count===1">
+                    <div class="row">
+                        <button style="border-radius: 0%;" class="btn btn btn-success  btn-block">BOOK THIS BET</button>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-12">
+                            <h4>Total Cost :R {{betSlipFinal}}</h4>
+                        </div> -->
+                    </div>
+                </ng-template>
+
+
+            </div>
+        </div>
+
+
+        <ng-template [ngIf]="count>1">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-white d-flex text-nowrap" style="border-color: transparent; background-color: #1e1e1e;">
+                        <div class="card-header" style="background-color: #643e94;border-radius: 0px;">
+                            Multiple
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="row d-flex text-nowrap justify-content-around" style="color: greenyellow;">
+                                <div class="col-3">
+                                    <p class="card-text">Odds</p>
+                                    <p>{{multipleOdds}}</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>Bonus</p>
+                                    <p>{{bonus}}%</p>
+                                </div>
+                                <div class="col-6">
+                                    <p>Final Odds</p>
+                                    <p>{{finalOdds}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <a class="text-white" data-toggle="collapse" href="#collapseExample"
+                                            role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Bonus Table
+                                        </a>
+                                    </p>
+                                    <div class="collapse" id="collapseExample">
+                                        <table class=" table table-bordered text-white">
+                                            <thead>
+                                                <tr>
+                                                    <th>Legs</th>
+                                                    <th>%</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let bonus of bonusTable">
+                                                    <td>{{bonus.legs}}</td>
+                                                    <td>{{bonus.bonuspercent}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-around mt-3">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-primary btn-block"
+                                        style="background:greenyellow;border:greenyellow !important ;min-width: 100% !important;">BOOK MULTIPLE</button>
+                                    <hr style="border: 0.5px solid white;">
+                                </div>
+                                <div class="row"
+                                    style="align-content: center!important;justify-content: center!important;display: flex!important; margin-top:white !important;">
+                                    <div class="col-6">
+
+                                        <label style="font-size:small;">
+                                            Stake : R <input   style="background-color: #2b2b2b; color: aliceblue;  border: none !important; border-radius: 0% !important;" appcurrencyformatter="" #box
+                                                (Keyup)="onKeyMultipleStake(box.value)"
+                                                (click)="onKeyMultipleStake(box.value)" value="box.value"
+                                                class="form-control stake-input-box input-sm ng-pristine ng-valid ng-touched spinner"
+                                                min="1" type="number">
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label style="font-size:small;">
+                                            Payout : R
+                                            <input   style="background-color: #2b2b2b; color: aliceblue;  border: none !important; border-radius: 0% !important;" appcurrencyformatter="" #payout
+                                                (Keyup)="onKeyMultiplePayout(payout.value)"
+                                                (click)="onKeyMultiplePayout(payout.value)" value="payout.value"
+                                                class="form-control stake-input-box input-sm ng-pristine ng-valid ng-touched spinner"
+                                                min="1" type="number">
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- <h4>Total Cost :R {{betSlipFinal}}</h4> -->
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <div class="card bg-dark text-white mt-2" style="min-width: 100% !important;">
+            <img class="card-img"
+                src="https://hollywoodmedia.hollywoodbets.net/images/cms/new-website/images/go-back-to-old-website.gif"
+                alt="" style="min-width: 100% !important;">
+            <div class="card-img-overlay">
+            </div>
+        </div>
+
+        <div class="mt-1">
+            <button type="button" class="btn btn-primary betButton mt-1" style="min-width:  100%!important;">Upload
+                FICA</button>
+            <button type="button" class="btn btn-primary betButton mt-1" style="min-width:  100%!important;">Sport
+                Blog</button>
+            <button type="button" class="btn btn-primary betButton mt-1" style="min-width:  100%!important;">Social
+                Responsibility</button>
+            <button type="button" class="btn btn-primary betButton mt-1" style="min-width:  100%!important;">Soccer
+                Betting News</button>
+            <button type="button" class="btn btn-primary betButton mt-1" style="min-width:  100%!important;">Winning
+                Form</button>
+            <button type="button" class="btn btn-primary betButton mt-1" style="min-width:  100%!important;">Horse
+                Racing Analysis and Tips</button>
+            <button type="button" class="btn btn-primary betButton mt-1"
+                style="min-width:  100%!important;">Careers</button>
+        </div>
+
+    </div>
+
+</div>

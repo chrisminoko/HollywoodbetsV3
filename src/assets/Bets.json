@@ -1,0 +1,57 @@
+[
+    {
+        "Id":"1",
+        "LeaguName":"La Liga",
+        "HomeTeam":"Real Madrid",
+        "Away_Team":"Athletic Madrid",
+        "HomePrice":0.9,
+        "AwayPrice":1.5,
+        "DrawPrice":1.1,
+        "Time":"14:00",
+        "CountryURL":"https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/flags/4x3/tn.svg"
+        ,
+        "Draw" :"Draw"
+
+    },
+    {
+        "Id":"2",
+        "LeaguName":"Premier League",
+        "HomeTeam":"Chelase",
+        "Away_Team":"Liverpool",
+        "HomePrice":0.9,
+        "AwayPrice":1.5,
+        "DrawPrice":1.1,
+        "Time":"14:00"
+        ,
+        "Draw" :"Draw"
+        ,
+        "CountryURL":"https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/flags/4x3/tn.svg"
+    },
+    {
+        "Id":"3",
+        "LeaguName":"Serie A",
+        "HomeTeam":"Juventus",
+        "Away_Team":"Inter Millan",
+        "HomePrice":0.9,
+        "AwayPrice":1.5,
+        "DrawPrice":1.1,
+        "Time":"14:00",
+        "Draw" :"Draw"
+        ,
+        "CountryURL":"https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/flags/4x3/tn.svg"
+    },
+    {
+        "Id":"4",
+        "LeaguName":"PSL",
+        "HomeTeam":"Kazer Chief",
+        "Away_Team":"Orlando Pirates",
+        "HomePrice":0.9,
+        "AwayPrice":1.5,
+        "DrawPrice":1.1,
+        "Time":"14:00"
+        ,
+        "CountryURL":"https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/flags/4x3/tn.svg"
+        ,
+        "Draw" :"Draw"
+    }
+]

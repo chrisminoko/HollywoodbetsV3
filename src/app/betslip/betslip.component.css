@@ -1,0 +1,24 @@
+.betButton{
+    border-radius: 0px!important;
+    background-color: #643e94!important;
+    border-color:#643e94!important ;
+}
+.btn-primary:hover{
+    background-color: black!important ;
+    outline-color: #643e94!important;
+    
+}
+.bg-cart{
+    max-height: 300px;
+    overflow-x: auto;
+}
+/* .cardborder{
+    border-top-color: yellow !important;
+    border-style: dotted !important;
+} */
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
